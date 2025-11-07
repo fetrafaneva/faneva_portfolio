@@ -1,0 +1,43 @@
+@import "tailwindcss";
+@plugin 'tailwind-scrollbar';
+
+html {
+scroll-behavior: smooth;
+}
+
+body { 
+    @apply bg-zinc-900 text-zinc-50 h-[200vh]
+}
+
+/*
+* Components
+*/
+
+/* Menu btn*/
+
+menu-btn {
+    @apply w-10 h-10 grid place-items-center bg-zinc-50/10 rounded-xl ring-inset ring-1 ring-zinc-50/[0.2] backdrop-blur-2xl
+    hover:bg-zinc-50/15 transition-[transform,background-color] active:scale-95
+}
+
+/* Navbar*/
+
+.navbar {
+    @apply absolute top-full mt-2 right-0 min-w-40 p-2 bg-zinc-50/10 rounded-2xl ring-inset ring-1 ring-zinc-50/5 scale-90 isolate blur-sm opacity-0 invisible transition-all
+}
+
+.navbar.active {
+    @apply opacity-100 scale-100 filter-none visible
+}
+
+.nav-link {
+    @apply grid items-center h-9 px-4 text-sm font-medium tracking-wide text-zinc-50/50 hover:text-zinc-50 transition-colors
+}
+
+.nav-link.active {
+    @apply text-zinc-900 duration-500
+}
+
+.navbar .active-box {
+    @apply absolute top-2 left-2 right-2 h-9 bg-zinc-50 rounded-lg -z-10 transition-all duration-500
+}
