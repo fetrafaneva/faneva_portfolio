@@ -20,7 +20,7 @@ body {
   /* Navbar */
   .navbar {
     @apply absolute top-full mt-2 right-0 min-w-40 p-2 bg-zinc-50/10 rounded-2xl ring-inset ring-1 ring-zinc-50/5 scale-90 isolate blur-sm opacity-0 invisible transition-all 
-  flex flex-col gap-1 /* ✅ disposition verticale sur mobile */
+  flex flex-col gap-1 
   md:static md:flex-row md:items-center md:mt-0 md:opacity-100 md:blur-none md:visible md:scale-100 backdrop-blur-2xl;
   }
 
