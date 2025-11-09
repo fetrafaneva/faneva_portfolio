@@ -2,54 +2,51 @@
 @plugin 'tailwind-scrollbar';
 
 html {
-scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body { 
-    @apply bg-zinc-900 text-zinc-50 h-[200vh]
+  @apply bg-zinc-900 text-zinc-50 h-[200vh];
 }
 
-/*
-* Components
-*/
+/* ✅ Place tout ton code personnalisé dans un layer */
+@layer components {
 
-/* Menu btn*/
-
-menu-btn {
+  /* Menu btn */
+  .menu-btn {
     @apply w-10 h-10 grid place-items-center bg-zinc-50/10 rounded-xl ring-inset ring-1 ring-zinc-50/[0.2] backdrop-blur-2xl hover:bg-zinc-50/15 transition-[transform,background-color] active:scale-95
-}
+  }
 
-/* Navbar*/
+  /* Navbar */
+  .navbar {
+    @apply absolute top-full mt-2 right-0 min-w-40 p-2 bg-zinc-50/10 rounded-2xl ring-inset ring-1 ring-zinc-50/5 scale-90 isolate blur-sm opacity-0 invisible transition-all 
+  flex flex-col gap-1 /* ✅ disposition verticale sur mobile */
+  md:static md:flex-row md:items-center md:mt-0 md:opacity-100 md:blur-none md:visible md:scale-100 backdrop-blur-2xl;
+  }
 
-.navbar {
-    @apply absolute top-full mt-2 right-0 min-w-40 p-2 bg-zinc-50/10 rounded-2xl ring-inset ring-1 ring-zinc-50/5 scale-90 isolate blur-sm opacity-0 invisible transition-all md:static md:flex md:items-center md:mt-0 md:opacity-100 md:blur-none md:visible md:scale-100 backdrop-blur-2xl
-}
-
-.navbar.active {
+  .navbar.active {
     @apply opacity-100 scale-100 filter-none visible
-}
+  }
 
-.nav-link {
-    @apply grid items-center h-9 px-4 text-sm font-medium tracking-wide text-zinc-50/50 hover:text-zinc-50 transition-colors
-}
+  .nav-link {
+    @apply inline-flex items-center h-9 px-4 text-sm font-medium tracking-wide text-zinc-50/50 hover:text-zinc-50 transition-colors;
+  }
 
-.nav-link.active {
-    @apply text-zinc-900 duration-500
-}
+  .nav-link.active {
+    @apply text-zinc-900 duration-500;
+  }
 
-.navbar .active-box {
+  .navbar .active-box {
     @apply absolute top-2 left-2 right-2 h-9 bg-zinc-50 rounded-lg -z-10 transition-all duration-500
-}
+  }
 
-/* Button*/
-
-.btn {
+  /* Button */
+  .btn {
     @apply max-w-max h-9 gap-2 px-4 rounded-xl font-medium text-sm ring-1 ring-zinc-50/5 ring-inset transition-[background-color];
+  }
 
-}
-
-.btn-secondary {
+  .btn-secondary {
     @apply bg-zinc-50 text-zinc-900 active:bg-zinc-50/80;
-
+  }
 
 }
