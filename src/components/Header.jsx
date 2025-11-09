@@ -42,7 +42,7 @@ const Header = () => {
         </div>
 
         <a href="#contact"
-        className="btn btn-secondary max-md:hidden md:justify-self-end">
+        className="hidden md:flex items-center justify-center gap-2 px-4 h-9 rounded-xl font-medium text-sm ring-1 ring-zinc-50/5 ring-inset bg-zinc-50 text-zinc-900 active:bg-zinc-50/80 transition-[background-color] md:justify-self-end">
             Contact me
         </a>
 
