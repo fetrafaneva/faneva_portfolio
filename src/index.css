@@ -9,7 +9,16 @@ body {
   @apply bg-zinc-900 text-zinc-50 h-[200vh];
 }
 
-/* ✅ Place tout ton code personnalisé dans un layer */
+
+/* Utilitaire */
+.material-symbols-rounded {
+  @apply w-[1em] h-[1em] overflow-hidden;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+
+
+/* ******************************* */
 @layer components {
 
   /* Menu btn */
