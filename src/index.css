@@ -12,7 +12,7 @@ body {
 /* Typo */
 .headline-1 {
   @apply max-w-max;
-  background: -webkit-linear-gradient(0deg, #fafafa, "alalaa");
+  background: -webkit-linear-gradient(0deg, #fafafa, #00aaff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
