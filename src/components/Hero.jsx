@@ -1,3 +1,13 @@
+/**
+ * @copyright 2025 ShiningPrism (Fetra Faneva)
+ * @license Apache-2.0
+ */
+
+
+/**
+ * Compenents
+ */
+import { ButtonPrimary, ButtonOutline } from "./Button"
 
 const Hero = () => {
     return(
@@ -29,19 +39,26 @@ const Hero = () => {
                         </div>
                     </div> 
 
-                    <h2 className="headline-1">
+                    <h2 className="headline-1 max-w-[15ch] sm:max-w-[20ch] lg:max-w-[15ch] mt-5 mb-8 lg:mb-10">
                         Building Scalable Modern Websites for the Future
                     </h2>
 
-                    <div className="">
-                        ButtonPrimary
+                    <div className="flex items-center gap-3">
+                        <ButtonPrimary
+                            label="Download CV"
+                            icon="download"
+                        />
 
-                        ButtonOutline
+                        <ButtonOutline
+                            href="#about"
+                            label="Scroll down"
+                            icon="arrow_downward"
+                        />
                     </div>
                 </div>
 
-                <div className="">
-                    <figure className="">
+                <div className="hidden lg:block">
+                    <figure className="w-full max-w-[480px] ml-auto bg-gradient-to-t from-sky-400 via-25% via-sky-400/40 to-65% rounded-[60px] overflow-hidden">
                         <img 
                         src="/images/hero-banner.png" 
                         width={656}

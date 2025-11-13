@@ -1,3 +1,9 @@
+/**
+ * @copyright 2025 ShiningPrism (Fetra Faneva)
+ * @license Apache-2.0
+ */
+
+
 /*
 * Node modules
 */
