@@ -19,7 +19,7 @@ const About = () => {
     return (
         <section
             id="about"
-            className="section"
+            className="section bg-primary"
         >
             <div className="container">
 

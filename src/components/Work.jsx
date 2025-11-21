@@ -54,7 +54,7 @@ const Work = () => {
     return (
         <section 
             id="work"
-            className="section"
+            className="bg-primary section"
         >
             <div className="container">
 

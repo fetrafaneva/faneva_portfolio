@@ -40,7 +40,7 @@ const Contact = () => {
     return (
         <section 
         id="contact"
-        className="section"
+        className="section bg-primary"
         >
             <div className="container lg:grid lg:grid-cols-2 lg:items-stretch">
 

@@ -59,7 +59,7 @@ const sitemap = [
 
 const Footer = () => {
     return (
-        <footer className="section">
+        <footer className="section bg-primary">
             <div className="container">
 
                 <div className=" lg:grid lg:grid-cols-2">

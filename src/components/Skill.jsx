@@ -56,7 +56,7 @@ const skillItem = [
 
 const Skill = () => {
     return(
-        <section className="section">
+        <section className="bg-primary section">
             <div className="container">
 
                 <h2 className="headline-2">

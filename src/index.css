@@ -12,7 +12,7 @@ html {
 }
 
 body { 
-  @apply bg-zinc-900 text-zinc-50 h-[200vh];
+  @apply  text-zinc-50 h-[200vh];
 }
 
 /* Typo */
@@ -130,5 +130,10 @@ body {
   .text-field::placeholder {
     @apply text-zinc-400
   }
+
+  .bg-primary {
+    --tw-bg-opacity: 1;
+    background-color: rgb(0 4 15 / var(--tw-bg-opacity)) /* #00040f */;
+}
 
 }

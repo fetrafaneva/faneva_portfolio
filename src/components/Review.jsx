@@ -53,7 +53,7 @@ const Review = () => {
     return (
         <section 
         id="reviews"
-        className="section overflow-hidden"
+        className="bg-primary section overflow-hidden"
         >
             <div className="container">
 
