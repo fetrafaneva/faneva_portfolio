@@ -3,10 +3,9 @@
  * @license Apache-2.0
  */
 
-
 /*
-* Components
-*/
+ * Components
+ */
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -17,21 +16,20 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 const App = () => {
-    return (
-    <> 
-        <Header />
-        <main>
-            <Hero />
-            <About />
-            <Skill />
-            <Work />
-            <Review />
-            <Contact />
-        </main>
-        <Footer />
-    </> 
-    )
-}
+  return (
+    <>
+      <Header />
+      <main>
+        <Hero />
+        <About />
+        <Skill />
+        <Work />
+        <Review />
+        <Contact />
+      </main>
+      <Footer />
+    </>
+  );
+};
 
 export default App;
-
