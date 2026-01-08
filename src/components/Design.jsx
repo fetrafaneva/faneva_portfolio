@@ -1,135 +1,109 @@
-import React from "react";
+/**
+ * @copyright 2025 ShiningPrism (Fetra Faneva)
+ * @license Apache-2.0
+ */
 
-const Design = () => {
-  const cardsData = [
-    {
-      image:
-        "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200",
-      name: "Briar Martin",
-      handle: "@neilstellar",
-      date: "April 20, 2025",
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200",
-      name: "Avery Johnson",
-      handle: "@averywrites",
-      date: "May 10, 2025",
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=200&auto=format&fit=crop&q=60",
-      name: "Jordan Lee",
-      handle: "@jordantalks",
-      date: "June 5, 2025",
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=200&auto=format&fit=crop&q=60",
-      name: "Avery Johnson",
-      handle: "@averywrites",
-      date: "May 10, 2025",
-    },
-  ];
+import ProjectCard from "./ProjectCard";
 
-  const CreateCard = ({ card }) => (
-    <div className="p-4 rounded-lg mx-4 shadow hover:shadow-lg transition-all duration-200 w-72 shrink-0">
-      <div className="flex gap-2">
-        <img
-          className="size-11 rounded-full"
-          src={card.image}
-          alt="User Image"
-        />
-        <div className="flex flex-col">
-          <div className="flex items-center gap-1">
-            <p>{card.name}</p>
-            <svg
-              className="mt-0.5"
-              width="12"
-              height="12"
-              viewBox="0 0 12 12"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M4.555.72a4 4 0 0 1-.297.24c-.179.12-.38.202-.59.244a4 4 0 0 1-.38.041c-.48.039-.721.058-.922.129a1.63 1.63 0 0 0-.992.992c-.071.2-.09.441-.129.922a4 4 0 0 1-.041.38 1.6 1.6 0 0 1-.245.59 3 3 0 0 1-.239.297c-.313.368-.47.551-.56.743-.213.444-.213.96 0 1.404.09.192.247.375.56.743.125.146.187.219.24.297.12.179.202.38.244.59.018.093.026.189.041.38.039.48.058.721.129.922.163.464.528.829.992.992.2.071.441.09.922.129.191.015.287.023.38.041.21.042.411.125.59.245.078.052.151.114.297.239.368.313.551.47.743.56.444.213.96.213 1.404 0 .192-.09.375-.247.743-.56.146-.125.219-.187.297-.24.179-.12.38-.202.59-.244a4 4 0 0 1 .38-.041c.48-.039.721-.058.922-.129.464-.163.829-.528.992-.992.071-.2.09-.441.129-.922a4 4 0 0 1 .041-.38c.042-.21.125-.411.245-.59.052-.078.114-.151.239-.297.313-.368.47-.551.56-.743.213-.444.213-.96 0-1.404-.09-.192-.247-.375-.56-.743a4 4 0 0 1-.24-.297 1.6 1.6 0 0 1-.244-.59 3 3 0 0 1-.041-.38c-.039-.48-.058-.721-.129-.922a1.63 1.63 0 0 0-.992-.992c-.2-.071-.441-.09-.922-.129a4 4 0 0 1-.38-.041 1.6 1.6 0 0 1-.59-.245A3 3 0 0 1 7.445.72C7.077.407 6.894.25 6.702.16a1.63 1.63 0 0 0-1.404 0c-.192.09-.375.247-.743.56m4.07 3.998a.488.488 0 0 0-.691-.69l-2.91 2.91-.958-.957a.488.488 0 0 0-.69.69l1.302 1.302c.19.191.5.191.69 0z"
-                fill="#2196F3"
-              />
-            </svg>
-          </div>
-          <span className="text-xs text-slate-500">{card.handle}</span>
-        </div>
-      </div>
-      <p className="text-sm py-4 text-gray-800">
-        Radiant made undercutting all of our competitors an absolute breeze.
-      </p>
-      <div className="flex items-center justify-between text-slate-500 text-xs">
-        <div className="flex items-center gap-1">
-          <span>Posted on</span>
-          <a
-            href="https://x.com"
-            target="_blank"
-            className="hover:text-sky-500"
-          >
-            <svg
-              width="11"
-              height="10"
-              viewBox="0 0 11 10"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="m.027 0 4.247 5.516L0 10h.962l3.742-3.926L7.727 10H11L6.514 4.174 10.492 0H9.53L6.084 3.616 3.3 0zM1.44.688h1.504l6.64 8.624H8.082z"
-                fill="currentColor"
-              />
-            </svg>
-          </a>
-        </div>
-        <p>{card.date}</p>
-      </div>
+const works = [
+  {
+    imgSrc: "/images/project-1.jpg",
+    title: "Full stack music app",
+    description: "Application musicale complète avec API et MVC.",
+    tags: ["API", "MVC", "Development"],
+  },
+  {
+    imgSrc: "/images/project-2.jpg",
+    title: "Free stock photo app",
+    description: "Plateforme SPA d’images libres.",
+    tags: ["API", "SPA"],
+  },
+  {
+    imgSrc: "/images/project-3.jpg",
+    title: "Recipe app",
+    description: "Application de recettes connectée à une API.",
+    tags: ["API", "Development"],
+  },
+  {
+    imgSrc: "/images/project-4.jpg",
+    title: "Real estate website",
+    description: "Site moderne pour agences immobilières.",
+    tags: ["Web-design", "Development"],
+  },
+  {
+    imgSrc: "/images/project-5.jpg",
+    title: "eCommerce website",
+    description: "Plateforme eCommerce UI moderne.",
+    tags: ["eCommerce", "Development"],
+  },
+  {
+    imgSrc: "/images/project-6.jpg",
+    title: "Personal portfolio",
+    description: "Portfolio UI/UX & développement.",
+    tags: ["UI/UX", "Development"],
+  },
+];
+
+/* Card desktop (hover expand) */
+const HoverCard = ({ imgSrc, title, description }) => (
+  <div className="relative group flex-grow transition-all duration-500 w-56 h-[380px] hover:w-full overflow-hidden rounded-2xl">
+    <img
+      src={imgSrc}
+      alt={title}
+      className="h-full w-full object-cover object-center"
+    />
+
+    <div
+      className="absolute inset-0 flex flex-col justify-end p-8
+                    text-white bg-black/50 opacity-0
+                    group-hover:opacity-100 transition-all duration-300"
+    >
+      <h3 className="text-2xl font-semibold">{title}</h3>
+      <p className="text-sm mt-1">{description}</p>
     </div>
-  );
+  </div>
+);
 
+const Work = () => {
   return (
-    <>
-      <style>{`
-        @keyframes marqueeScroll {
-            0% { transform: translateX(0%); }
-            100% { transform: translateX(-50%); }
-        }
+    <section
+      id="design"
+      className="bg-primary section relative overflow-hidden"
+    >
+      <div className="container">
+        <h2 className="headline-2 text-center mb-8">My Design Work</h2>
 
-        .marquee-inner {
-            animation: marqueeScroll 25s linear infinite;
-        }
-
-        .marquee-reverse {
-            animation-direction: reverse;
-        }
-    `}</style>
-
-      <div className="marquee-row w-full mx-auto max-w-5xl overflow-hidden relative">
-        <div className="absolute left-0 top-0 h-full w-20 z-10 pointer-events-none bg-gradient-to-r from-white to-transparent"></div>
-        <div className="marquee-inner flex transform-gpu min-w-[200%] pt-10 pb-5">
-          {[...cardsData, ...cardsData].map((card, index) => (
-            <CreateCard key={index} card={card} />
+        {/* ================= MOBILE (same as Development Work) ================= */}
+        <div className="grid gap-x-4 gap-y-5 grid-cols-[repeat(auto-fill,_minmax(280px,_1fr))] md:hidden">
+          {works.map((work, i) => (
+            <ProjectCard
+              key={i}
+              imgSrc={work.imgSrc}
+              title={work.title}
+              tags={work.tags}
+            />
           ))}
         </div>
-        <div className="absolute right-0 top-0 h-full w-20 md:w-40 z-10 pointer-events-none bg-gradient-to-l from-white to-transparent"></div>
-      </div>
 
-      <div className="marquee-row w-full mx-auto max-w-5xl overflow-hidden relative">
-        <div className="absolute left-0 top-0 h-full w-20 z-10 pointer-events-none bg-gradient-to-r from-white to-transparent"></div>
-        <div className="marquee-inner marquee-reverse flex transform-gpu min-w-[200%] pt-10 pb-5">
-          {[...cardsData, ...cardsData].map((card, index) => (
-            <CreateCard key={index} card={card} />
-          ))}
+        {/* ================= DESKTOP (hover expand) ================= */}
+        <div className="hidden md:block">
+          {/* ROW 1 */}
+          <div className="relative z-10 flex items-center gap-6 h-[380px] max-w-6xl mx-auto mb-8">
+            {works.slice(0, 3).map((work, i) => (
+              <HoverCard key={i} {...work} />
+            ))}
+          </div>
+
+          {/* ROW 2 */}
+          <div className="relative z-10 flex items-center gap-6 h-[380px] max-w-6xl mx-auto">
+            {works.slice(3, 6).map((work, i) => (
+              <HoverCard key={i} {...work} />
+            ))}
+          </div>
         </div>
-        <div className="absolute right-0 top-0 h-full w-20 md:w-40 z-10 pointer-events-none bg-gradient-to-l from-white to-transparent"></div>
       </div>
-    </>
+    </section>
   );
 };
 
-export default Design;
+export default Work;

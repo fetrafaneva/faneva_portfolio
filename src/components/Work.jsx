@@ -51,7 +51,7 @@ const Work = () => {
   return (
     <section id="development" className="bg-primary section">
       <div className="container">
-        <h2 className="headline-2 mb-8">My portfolio highlights</h2>
+        <h2 className="headline-2 mb-8">My Development Work</h2>
         {/* gradient start */}
         <div className="absolute z-[0] w-[20%] h-[35%] top-0 pink__gradient" />
         {/* gradient end */}
