@@ -9,8 +9,8 @@ const aboutItems = [
     number: 25,
   },
   {
-    label: "Commit on Github",
-    number: 100,
+    label: "Mockup done",
+    number: 15,
   },
 ];
 
