@@ -10,10 +10,10 @@ import ProjectCard from "./ProjectCard";
 
 const works = [
   {
-    imgSrc: "/images/project-1.jpg",
-    title: "Full stack music app",
-    tags: ["API", "MVC", "Development"],
-    projectLink: "https://musify-5al0.onrender.com/",
+    imgSrc: "/images/AIResume.png",
+    title: "Full stack AIResume app",
+    tags: ["React", "nodeJS", "MongoDB"],
+    projectLink: "https://github.com/fetrafaneva/MERN_AIResume",
   },
   {
     imgSrc: "/images/project-2.jpg",

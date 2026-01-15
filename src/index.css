@@ -89,7 +89,11 @@ body {
 
   /* Button */
   .btn {
-    @apply max-w-max h-9 gap-2 px-4 rounded-xl font-medium text-sm ring-1 ring-zinc-50/5 ring-inset transition-[background-color];
+    @apply inline-flex items-center justify-center
+    max-w-max h-9 gap-2 px-4 rounded-xl
+    font-medium text-sm
+    ring-1 ring-zinc-50/5 ring-inset
+    transition-[background-color];
   }
 
   .btn-secondary {
