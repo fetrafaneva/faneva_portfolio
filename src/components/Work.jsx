@@ -16,7 +16,7 @@ const works = [
     projectLink: "https://github.com/fetrafaneva/MERN_AIResume",
   },
   {
-    imgSrc: "/images/project-2.jpg",
+    imgSrc: "/images/papilloguide.png",
     title: "Free stock photo app",
     tags: ["API", "SPA"],
     projectLink: "https://pixstock-official.vercel.app/",
