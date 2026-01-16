@@ -17,9 +17,9 @@ const works = [
   },
   {
     imgSrc: "/images/papilloguide.png",
-    title: "Free stock photo app",
-    tags: ["API", "SPA"],
-    projectLink: "https://pixstock-official.vercel.app/",
+    title: "PapilloGuide app",
+    tags: ["React", "TailwindCSS", "JavaScript"],
+    projectLink: "https://github.com/fetrafaneva/PapilloGuide",
   },
   {
     imgSrc: "/images/project-3.jpg",
