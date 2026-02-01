@@ -91,19 +91,6 @@ const Contact = () => {
             Reach out today to discuss your project needs and start
             collaborating on something amazing!
           </p>
-
-          <div className="flex items-center gap-2 mt-auto">
-            {socialLinks.map(({ href, icon }, key) => (
-              <a
-                key={key}
-                href={href}
-                target="_blank"
-                className=" w-12 h-12 grid place-items-center ring-inset ring-2 ring-zinc-50/5 rounded-lg transition-all hover:bg-zinc-50 hover:text-zinc-950 active:bg-zinc-50/80"
-              >
-                {icon}
-              </a>
-            ))}
-          </div>
         </div>
 
         <form

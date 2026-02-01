@@ -100,7 +100,7 @@ const Footer = () => {
                 />
               </svg>
             </a>
-            <a href="#">
+            <a href="https://www.github.com/fetrafaneva">
               <svg
                 width="20"
                 height="20"
