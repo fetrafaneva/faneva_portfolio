@@ -79,8 +79,8 @@ const Footer = () => {
             />
           </svg>
           <p className="mt-6 text-sm text-gray-500">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been.
+            Let’s collaborate together to turn ideas into reality by combining
+            creativity, skills, and passion to build impactful digital projects.
           </p>
           <div className="flex items-center gap-2 mt-3">
             <a href="#">
@@ -139,24 +139,24 @@ const Footer = () => {
 
         <div className="w-1/2 flex flex-wrap md:flex-nowrap justify-between">
           <div>
-            <h2 className="font-semibold text-gray-900 mb-5">RESOURCES</h2>
+            <h2 className="font-semibold text-white-900 mb-5">RESOURCES</h2>
             <ul className="text-sm text-gray-500 space-y-2 list-none">
               <li>
-                <a href="#">Documentation</a>
+                <a href="#home">Home</a>
               </li>
               <li>
-                <a href="#">Tutorials</a>
+                <a href="#about">About</a>
               </li>
               <li>
-                <a href="#">Blog</a>
+                <a href="#development">Development</a>
               </li>
               <li>
-                <a href="#">Community</a>
+                <a href="#design">Design</a>
               </li>
             </ul>
           </div>
           <div>
-            <h2 className="font-semibold text-gray-900 mb-5">COMPANY</h2>
+            <h2 className="font-semibold text-white-900 mb-5">COMPANY</h2>
             <div className="text-sm text-gray-500 space-y-2 list-none">
               <li>
                 <a href="#">About</a>
@@ -175,8 +175,9 @@ const Footer = () => {
         </div>
       </div>
       <p className="py-4 text-center text-xs md:text-sm text-gray-500">
-        Copyright 2024 © <a href="https://prebuiltui.com">PrebuiltUI</a>. All
-        Right Reserved.
+        Copyright 2026 ©{" "}
+        <a href="https://github.com/fetrafaneva">fetrafaneva</a>. All Right
+        Reserved.
       </p>
     </footer>
   );
