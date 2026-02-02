@@ -1,16 +1,17 @@
-/**
- * @copyright 2025 ShiningPrism (Fetra Faneva)
- * @license Apache-2.0
- */
-
-/**
- * Compenents
- */
 import { ButtonPrimary, ButtonOutline } from "./Button";
 
 const Hero = () => {
+  const handleDownloadCV = () => {
+    const link = document.createElement("a");
+    link.href = "/images/CV.pdf";
+    link.download = "fetrafaneva_CV.pdf"; // nom du fichier téléchargé
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
-    <section id="home" className=" bg-primary pt-28 lg:pt-36">
+    <section id="home" className="bg-primary pt-28 lg:pt-36">
       <div className="container items-center lg:grid lg:grid-cols-2 lg:gap-10">
         <div>
           <div className="flex items-center gap-3">
@@ -37,7 +38,11 @@ const Hero = () => {
           </h2>
 
           <div className="flex items-center gap-3">
-            <ButtonPrimary label="Download CV" icon="download" />
+            <ButtonPrimary
+              label="Download CV"
+              icon="download"
+              onClick={handleDownloadCV}
+            />
 
             <ButtonOutline
               href="#about"
