@@ -13,6 +13,7 @@ const skillItem = [
     imgSrc: "/images/figma.svg",
     label: "Figma",
     desc: "Design tool",
+    level: "advanced",
   },
   {
     imgSrc: "/images/css3.svg",
@@ -63,8 +64,14 @@ const Skill = () => {
         </p>
 
         <div className=" grid gap-3 grid-cols-[repeat(auto-fill,_minmax(250px,_1fr))]">
-          {skillItem.map(({ imgSrc, label, desc }, key) => (
-            <SkillCard key={key} imgSrc={imgSrc} label={label} desc={desc} />
+          {skillItem.map(({ imgSrc, label, desc, level }, key) => (
+            <SkillCard
+              key={key}
+              imgSrc={imgSrc}
+              label={label}
+              desc={desc}
+              level={level}
+            />
           ))}
         </div>
       </div>
