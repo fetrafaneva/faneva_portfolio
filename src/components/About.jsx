@@ -29,11 +29,10 @@ const About = () => {
             </p>
 
             <p className="mt-4 text-zinc-400">
-              My main stack is <strong>MERN</strong> and{" "}
-              <strong>Flutter/Dart</strong>. I design with Figma & Adobe XD{" "}
-              <br />
+              My main stack is <strong>MERN</strong>. I design with Figma &
+              Adobe XD <br />
               My favorite project so far is
-              <span> MERN_AIResume</span>.
+              <span> twitterX_media_down </span>.
             </p>
 
             {/* STATS */}
