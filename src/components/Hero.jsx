@@ -11,7 +11,10 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="bg-primary pt-28 lg:pt-36">
+    <section
+      id="home"
+      className=" overflow-hidden relative bg-primary pt-28 lg:pt-36"
+    >
       <div className="container items-center lg:grid lg:grid-cols-2 lg:gap-10">
         <div>
           <div className="flex items-center gap-3">
