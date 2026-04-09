@@ -6,6 +6,9 @@
 @import "tailwindcss";
 @plugin 'tailwind-scrollbar';
 
+section {
+  margin-bottom: -1px;
+}
 html {
   scroll-behavior: smooth;
 }
