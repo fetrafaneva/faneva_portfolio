@@ -8,7 +8,7 @@ import ProjectCard from "./ProjectCard";
 
 const works = [
   {
-    imgSrc: "/images/project-1.jpg",
+    imgSrc: "/images/desing1.png",
     title: "Full Stack Music App",
     description:
       "Application musicale complète avec authentification, API et architecture MVC moderne.",
@@ -49,63 +49,99 @@ const works = [
   },
 ];
 
-/* ================= DESKTOP HOVER CARD ================= */
-
 const HoverCard = ({ imgSrc, title, description, tags }) => {
   return (
     <div
       className="
         group relative flex-grow w-56 h-[420px]
         overflow-hidden rounded-3xl
-        transition-all duration-500 ease-out
-        hover:w-full
         border border-white/10
         bg-gradient-to-b from-white/5 to-white/[0.02]
-        shadow-lg hover:shadow-2xl
+
+        transition-all duration-700
+        ease-[cubic-bezier(0.22,1,0.36,1)]
+
+        hover:w-full hover:-translate-y-2
+        hover:shadow-[0_25px_80px_rgba(0,0,0,0.45)]
+
+        transform-gpu will-change-transform
       "
     >
-      {/* IMAGE */}
+      {/* Image */}
       <img
         src={imgSrc}
         alt={title}
         className="
           absolute inset-0 h-full w-full object-cover object-center
-          transition-transform duration-700
-          group-hover:scale-110
+
+          scale-100 group-hover:scale-110
+          group-hover:rotate-[1deg]
+
+          transition-transform duration-[1400ms]
+          ease-[cubic-bezier(0.22,1,0.36,1)]
+
+          will-change-transform
         "
       />
 
-      {/* OVERLAY */}
+      {/* Overlay */}
       <div
         className="
           absolute inset-0
           bg-gradient-to-t
-          from-black via-black/50 to-transparent
+          from-black/90 via-black/40 to-black/10
+
+          opacity-80 group-hover:opacity-100
+          transition-opacity duration-700
         "
       />
 
-      {/* CONTENT */}
+      {/* Glow */}
+      <div
+        className="
+          absolute inset-0 opacity-0
+          group-hover:opacity-100
+          transition-opacity duration-700
+
+          bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.18),transparent_60%)]
+          pointer-events-none
+        "
+      />
+
+      {/* Content */}
       <div
         className="
           absolute inset-0 z-10
           flex flex-col justify-end
           p-7
-          translate-y-6
-          opacity-0
+
+          translate-y-10 opacity-0
           group-hover:translate-y-0
           group-hover:opacity-100
-          transition-all duration-500
+
+          transition-all duration-700
+          ease-[cubic-bezier(0.22,1,0.36,1)]
         "
       >
-        {/* TAGS */}
-        <div className="flex flex-wrap gap-2 mb-4">
+        {/* Tags */}
+        <div
+          className="
+            flex flex-wrap gap-2 mb-4
+
+            translate-y-4 opacity-0
+            group-hover:translate-y-0
+            group-hover:opacity-100
+
+            transition-all duration-700 delay-100
+          "
+        >
           {tags.map((tag, index) => (
             <span
               key={index}
               className="
                 px-3 py-1 rounded-full
                 text-xs font-medium
-                bg-white/15 backdrop-blur-md
+                bg-white/10 backdrop-blur-xl
                 border border-white/10
                 text-white
               "
@@ -115,12 +151,34 @@ const HoverCard = ({ imgSrc, title, description, tags }) => {
           ))}
         </div>
 
-        {/* TITLE */}
+        {/* Text */}
         <div className="flex items-start justify-between gap-4">
           <div>
-            <h3 className="text-2xl font-bold text-white">{title}</h3>
+            <h3
+              className="
+                text-2xl font-bold text-white
 
-            <p className="text-sm text-zinc-300 mt-2 max-w-sm leading-relaxed">
+                translate-y-4 opacity-0
+                group-hover:translate-y-0
+                group-hover:opacity-100
+
+                transition-all duration-700 delay-150
+              "
+            >
+              {title}
+            </h3>
+
+            <p
+              className="
+                text-sm text-zinc-300 mt-2 max-w-sm leading-relaxed
+
+                translate-y-4 opacity-0
+                group-hover:translate-y-0
+                group-hover:opacity-100
+
+                transition-all duration-700 delay-200
+              "
+            >
               {description}
             </p>
           </div>
@@ -130,8 +188,13 @@ const HoverCard = ({ imgSrc, title, description, tags }) => {
               min-w-12 h-12 rounded-full
               bg-white text-black
               flex items-center justify-center
+
+              scale-90 opacity-0 rotate-0
+              group-hover:scale-100
+              group-hover:opacity-100
               group-hover:rotate-45
-              transition-transform duration-300
+
+              transition-all duration-500 delay-300
             "
           >
             <ArrowUpRight size={20} />
@@ -139,13 +202,15 @@ const HoverCard = ({ imgSrc, title, description, tags }) => {
         </div>
       </div>
 
-      {/* SMALL TITLE DEFAULT */}
       <div
         className="
           absolute bottom-0 left-0 right-0 z-[5]
           p-6
+
+          group-hover:translate-y-6
           group-hover:opacity-0
-          transition-opacity duration-300
+
+          transition-all duration-500
         "
       >
         <h3 className="text-white text-xl font-semibold">{title}</h3>
@@ -153,8 +218,6 @@ const HoverCard = ({ imgSrc, title, description, tags }) => {
     </div>
   );
 };
-
-/* ================= MAIN COMPONENT ================= */
 
 const Work = () => {
   return (
@@ -164,7 +227,6 @@ const Work = () => {
         bg-primary section relative overflow-hidden
       "
     >
-      {/* BACKGROUND EFFECT */}
       <div
         className="
           absolute top-0 left-1/2 -translate-x-1/2
@@ -176,12 +238,9 @@ const Work = () => {
       />
 
       <div className="container relative z-10">
-        {/* HEADER */}
         <div className="text-center mb-14">
           <h2 className="headline-2 mb-4">My Design Work</h2>
         </div>
-
-        {/* ================= MOBILE ================= */}
 
         <div
           className="
@@ -200,17 +259,13 @@ const Work = () => {
           ))}
         </div>
 
-        {/* ================= DESKTOP ================= */}
-
         <div className="hidden md:block space-y-8">
-          {/* ROW 1 */}
           <div className="flex items-center gap-6 h-[420px] max-w-7xl mx-auto">
             {works.slice(0, 3).map((work, i) => (
               <HoverCard key={i} {...work} />
             ))}
           </div>
 
-          {/* ROW 2 */}
           <div className="flex items-center gap-6 h-[420px] max-w-7xl mx-auto">
             {works.slice(3, 6).map((work, i) => (
               <HoverCard key={i} {...work} />
