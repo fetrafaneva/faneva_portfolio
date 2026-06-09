@@ -79,12 +79,7 @@ const Card3D = ({ children }) => {
 /* ── Hero ───────────────────────────────────────────────────────────── */
 const Hero = () => {
   const handleDownloadCV = () => {
-    const link = document.createElement("a");
-    link.href = "/images/CV_Fetra_Faneva_FullStack.pdf";
-    link.download = "fetrafaneva_CV.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    window.open("/images/CV.pdf", "_blank");
   };
 
   return (
@@ -117,7 +112,7 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* ── Right — 3D image ── */}
+        {/* ── Right ── */}
         <div className="hidden lg:flex justify-end">
           <Card3D>
             <a
