@@ -13,7 +13,7 @@ const skillItem = [
     imgSrc: "/images/figma.svg",
     label: "Figma",
     desc: "Design tool",
-    level: "advanced",
+    level: "intermediate",
   },
   {
     imgSrc: "/images/css3.svg",

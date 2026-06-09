@@ -4,8 +4,8 @@
  */
 
 const aboutItems = [
-  { label: "Projects done", number: 25 },
-  { label: "Mockups designed", number: 15 },
+  { label: "Projects done", number: 15 },
+  { label: "Mockups designed", number: 4 },
 ];
 
 const About = () => {
@@ -23,14 +23,14 @@ const About = () => {
             <p className="mt-6 md:text-lg">
               Hello world ! I’m{" "}
               <span className="text-white font-semibold">Faneva</span>, a
-              Full-Stack MERN Developer & UI/UX Designer based in Fianarantsoa.
+              Full-Stack MERN Developer & UI/UX Designer based in Antananarivo.
               I love transforming ideas into clean, scalable, and modern digital
               experiences.
             </p>
 
             <p className="mt-4 text-zinc-400">
-              My main stack is <strong>MERN</strong>. I design with Figma &
-              Adobe XD <br />
+              My main stack is <strong>MERN and Nextjs</strong>. I design with
+              Figma & Adobe XD <br />
               My favorite project so far is
               <span> twitterX_media_down </span>.
             </p>

@@ -42,7 +42,7 @@ const works = [
     isNew: false,
   },
   {
-    imgSrc: "/images/project-5.jpg",
+    imgSrc: "/images/FleetTrack.png",
     title: "Fleettrack",
     tags: ["Nextjs", "Supabase", "MongoDB"],
     projectLink: "https://github.com/codewithsadee/anon-ecommerce-website",
