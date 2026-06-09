@@ -9,45 +9,35 @@ const works = [
     description:
       "Application musicale complète avec authentification, API et architecture MVC moderne.",
     tags: ["API", "MVC", "Development"],
+    behanceUrl:
+      "https://www.behance.net/gallery/250054951/E-kitra-Sneaker-E-Commerce-UIUX-Design",
   },
   {
-    imgSrc: "/images/project-2.jpg",
+    imgSrc: "/images/project-2.png",
     title: "Free Stock Photo App",
     description:
       "Plateforme SPA performante pour explorer et télécharger des images libres.",
     tags: ["API", "SPA"],
+    behanceUrl:
+      "https://www.behance.net/gallery/247447419/Genshin-Impact-Launcher",
   },
   {
-    imgSrc: "/images/project-3.jpg",
+    imgSrc: "/images/design-3.png",
     title: "Recipe App",
     description:
       "Application de recettes intelligente connectée à une API externe.",
     tags: ["API", "Development"],
-  },
-  {
-    imgSrc: "/images/project-4.jpg",
-    title: "Real Estate Website",
-    description: "Site immobilier moderne avec expérience utilisateur premium.",
-    tags: ["Web Design", "Development"],
-  },
-  {
-    imgSrc: "/images/project-5.jpg",
-    title: "eCommerce Website",
-    description:
-      "Plateforme eCommerce responsive avec interface élégante et rapide.",
-    tags: ["eCommerce", "Development"],
-  },
-  {
-    imgSrc: "/images/project-6.jpg",
-    title: "Personal Portfolio",
-    description: "Portfolio moderne orienté UI/UX et développement frontend.",
-    tags: ["UI/UX", "Development"],
+    behanceUrl:
+      "https://www.behance.net/gallery/250808457/FleetTrack-Fleet-Management-Platform",
   },
 ];
 
-const HoverCard = ({ imgSrc, title, description, tags }) => {
+const HoverCard = ({ imgSrc, title, description, tags, behanceUrl }) => {
   return (
-    <div
+    <a
+      href={behanceUrl}
+      target="_blank"
+      rel="noopener noreferrer"
       className="
         group relative flex-grow w-56 h-[420px]
         overflow-hidden rounded-3xl
@@ -83,15 +73,7 @@ const HoverCard = ({ imgSrc, title, description, tags }) => {
         "
       />
 
-      <div
-        className="
-          absolute inset-0 opacity-0
-          group-hover:opacity-100
-          transition-opacity duration-700
-          bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.18),transparent_60%)]
-          pointer-events-none
-        "
-      />
+      <div className="absolute inset-0 opacity-0 pointer-events-none" />
 
       <div
         className="
@@ -184,7 +166,7 @@ const HoverCard = ({ imgSrc, title, description, tags }) => {
       >
         <h3 className="text-white text-xl font-semibold">{title}</h3>
       </div>
-    </div>
+    </a>
   );
 };
 
