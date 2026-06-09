@@ -1,10 +1,6 @@
-/**
- * @copyright 2025 ShiningPrism (Fetra Faneva)
- * @license Apache-2.0
- */
-
 import { ArrowUpRight } from "lucide-react";
 import ProjectCard from "./ProjectCard";
+import { useState } from "react";
 
 const works = [
   {
@@ -57,81 +53,64 @@ const HoverCard = ({ imgSrc, title, description, tags }) => {
         overflow-hidden rounded-3xl
         border border-white/10
         bg-gradient-to-b from-white/5 to-white/[0.02]
-
         transition-all duration-700
         ease-[cubic-bezier(0.22,1,0.36,1)]
-
         hover:w-full hover:-translate-y-2
         hover:shadow-[0_25px_80px_rgba(0,0,0,0.45)]
-
         transform-gpu will-change-transform
       "
     >
-      {/* Image */}
       <img
         src={imgSrc}
         alt={title}
         className="
           absolute inset-0 h-full w-full object-cover object-center
-
           scale-100 group-hover:scale-110
           group-hover:rotate-[1deg]
-
           transition-transform duration-[1400ms]
           ease-[cubic-bezier(0.22,1,0.36,1)]
-
           will-change-transform
         "
       />
 
-      {/* Overlay */}
       <div
         className="
           absolute inset-0
           bg-gradient-to-t
           from-black/90 via-black/40 to-black/10
-
           opacity-80 group-hover:opacity-100
           transition-opacity duration-700
         "
       />
 
-      {/* Glow */}
       <div
         className="
           absolute inset-0 opacity-0
           group-hover:opacity-100
           transition-opacity duration-700
-
           bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.18),transparent_60%)]
           pointer-events-none
         "
       />
 
-      {/* Content */}
       <div
         className="
           absolute inset-0 z-10
           flex flex-col justify-end
           p-7
-
           translate-y-10 opacity-0
           group-hover:translate-y-0
           group-hover:opacity-100
-
           transition-all duration-700
           ease-[cubic-bezier(0.22,1,0.36,1)]
         "
       >
-        {/* Tags */}
         <div
           className="
             flex flex-wrap gap-2 mb-4
-
             translate-y-4 opacity-0
             group-hover:translate-y-0
             group-hover:opacity-100
-
             transition-all duration-700 delay-100
           "
         >
@@ -151,31 +130,25 @@ const HoverCard = ({ imgSrc, title, description, tags }) => {
           ))}
         </div>
 
-        {/* Text */}
         <div className="flex items-start justify-between gap-4">
           <div>
             <h3
               className="
                 text-2xl font-bold text-white
-
                 translate-y-4 opacity-0
                 group-hover:translate-y-0
                 group-hover:opacity-100
-
                 transition-all duration-700 delay-150
               "
             >
               {title}
             </h3>
-
             <p
               className="
                 text-sm text-zinc-300 mt-2 max-w-sm leading-relaxed
-
                 translate-y-4 opacity-0
                 group-hover:translate-y-0
                 group-hover:opacity-100
-
                 transition-all duration-700 delay-200
               "
             >
@@ -188,12 +161,10 @@ const HoverCard = ({ imgSrc, title, description, tags }) => {
               min-w-12 h-12 rounded-full
               bg-white text-black
               flex items-center justify-center
-
               scale-90 opacity-0 rotate-0
               group-hover:scale-100
               group-hover:opacity-100
               group-hover:rotate-45
-
               transition-all duration-500 delay-300
             "
           >
@@ -206,10 +177,8 @@ const HoverCard = ({ imgSrc, title, description, tags }) => {
         className="
           absolute bottom-0 left-0 right-0 z-[5]
           p-6
-
           group-hover:translate-y-6
           group-hover:opacity-0
-
           transition-all duration-500
         "
       >
@@ -220,12 +189,14 @@ const HoverCard = ({ imgSrc, title, description, tags }) => {
 };
 
 const Work = () => {
+  const [showAll, setShowAll] = useState(false);
+
+  const visibleWorks = showAll ? works : works.slice(0, 3);
+
   return (
     <section
       id="design"
-      className="
-        bg-primary section relative overflow-hidden
-      "
+      className="bg-primary section relative overflow-hidden"
     >
       <div
         className="
@@ -242,6 +213,7 @@ const Work = () => {
           <h2 className="headline-2 mb-4">My Design Work</h2>
         </div>
 
+        {/* Mobile grid */}
         <div
           className="
             grid gap-x-4 gap-y-5
@@ -249,7 +221,7 @@ const Work = () => {
             md:hidden
           "
         >
-          {works.map((work, i) => (
+          {visibleWorks.map((work, i) => (
             <ProjectCard
               key={i}
               imgSrc={work.imgSrc}
@@ -259,18 +231,45 @@ const Work = () => {
           ))}
         </div>
 
-        <div className="hidden md:block space-y-8">
+        {/* Desktop hover cards */}
+        <div className="hidden md:block">
           <div className="flex items-center gap-6 h-[420px] max-w-7xl mx-auto">
-            {works.slice(0, 3).map((work, i) => (
+            {visibleWorks.slice(0, 3).map((work, i) => (
               <HoverCard key={i} {...work} />
             ))}
           </div>
 
-          <div className="flex items-center gap-6 h-[420px] max-w-7xl mx-auto">
-            {works.slice(3, 6).map((work, i) => (
-              <HoverCard key={i} {...work} />
-            ))}
-          </div>
+          {showAll && (
+            <div className="flex items-center gap-6 h-[420px] max-w-7xl mx-auto mt-8">
+              {works.slice(3, 6).map((work, i) => (
+                <HoverCard key={i} {...work} />
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* Bouton Voir plus / Voir moins */}
+        {/* Bouton Voir plus */}
+        <div className="flex justify-center mt-12">
+          <a
+            href="https://www.behance.net/fetrafaneva"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+    flex items-center gap-2
+    px-8 py-3 rounded-full
+    border border-white/20
+    text-white text-sm font-medium
+    bg-white/5 hover:bg-white/10
+    backdrop-blur-sm
+    transition-all duration-300
+    hover:-translate-y-0.5
+    hover:shadow-[0_8px_30px_rgba(255,255,255,0.08)]
+  "
+          >
+            Voir plus
+            <ArrowUpRight size={16} />
+          </a>
         </div>
       </div>
     </section>
