@@ -5,27 +5,27 @@ import { useState } from "react";
 const works = [
   {
     imgSrc: "/images/desing1.png",
-    title: "Full Stack Music App",
+    title: "Sneaker E-Commerce",
     description:
-      "Application musicale complète avec authentification, API et architecture MVC moderne.",
-    tags: ["API", "MVC", "Development"],
+      "A modern and user-centered sneaker shopping experience with clean visuals.",
+    tags: ["UI/UX Design", "AdobeXD", "E-Commerce"],
     behanceUrl:
       "https://www.behance.net/gallery/250054951/E-kitra-Sneaker-E-Commerce-UIUX-Design",
   },
   {
     imgSrc: "/images/project-2.png",
-    title: "Free Stock Photo App",
+    title: "Genshin Impact Launcher App",
     description:
-      "Plateforme SPA performante pour explorer et télécharger des images libres.",
-    tags: ["API", "SPA"],
+      "A UI/UX practice project recreating the Genshin Impact launcher using Adobe XD.",
+    tags: ["Adobe XD", "Game UI"],
     behanceUrl:
       "https://www.behance.net/gallery/247447419/Genshin-Impact-Launcher",
   },
   {
     imgSrc: "/images/design-3.png",
-    title: "Recipe App",
+    title: "FleetTrack Manager",
     description:
-      "Application de recettes intelligente connectée à une API externe.",
+      "A fleet management system designed to track and manage vehicles, drivers, and trips efficiently.",
     tags: ["API", "Development"],
     behanceUrl:
       "https://www.behance.net/gallery/250808457/FleetTrack-Fleet-Management-Platform",
@@ -198,18 +198,24 @@ const Work = () => {
         {/* Mobile grid */}
         <div
           className="
-            grid gap-x-4 gap-y-5
-            grid-cols-[repeat(auto-fill,_minmax(280px,_1fr))]
-            md:hidden
-          "
+    grid gap-x-4 gap-y-5
+    grid-cols-[repeat(auto-fill,_minmax(280px,_1fr))]
+    md:hidden
+  "
         >
           {visibleWorks.map((work, i) => (
-            <ProjectCard
+            <a
               key={i}
-              imgSrc={work.imgSrc}
-              title={work.title}
-              tags={work.tags}
-            />
+              href={work.behanceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <ProjectCard
+                imgSrc={work.imgSrc}
+                title={work.title}
+                tags={work.tags}
+              />
+            </a>
           ))}
         </div>
 

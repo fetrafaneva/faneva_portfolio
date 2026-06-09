@@ -80,7 +80,7 @@ const Card3D = ({ children }) => {
 const Hero = () => {
   const handleDownloadCV = () => {
     const link = document.createElement("a");
-    link.href = "/images/CV.pdf";
+    link.href = "/images/CV_Fetra_Faneva_FullStack.pdf";
     link.download = "fetrafaneva_CV.pdf";
     document.body.appendChild(link);
     link.click();
