@@ -57,6 +57,21 @@ const works = [
     category: "Full Stack",
     isNew: false,
   },
+  {
+    imgSrc: "/images/navi.png",
+    title: "Navi - AI Desktop Avatar Assistant",
+    tags: [
+      "React",
+      "TypeScript",
+      "Electron",
+      "Gemini AI",
+      "ElevenLabs",
+      "Vite",
+    ],
+    projectLink: "https://github.com/fetrafaneva/navi",
+    category: "Desktop AI",
+    isNew: true,
+  },
 ];
 
 const Work = () => {
