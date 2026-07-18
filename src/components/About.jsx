@@ -36,7 +36,7 @@ const About = () => {
             </p>
 
             {/* STATS */}
-            <div className="flex gap-8 mt-6">
+            {/* <div className="flex gap-8 mt-6">
               {aboutItems.map((item, index) => (
                 <div key={index}>
                   <div className="flex items-center">
@@ -48,7 +48,7 @@ const About = () => {
                   <p className="text-sm text-zinc-400">{item.label}</p>
                 </div>
               ))}
-            </div>
+            </div> */}
 
             {/* CTA */}
           </div>
