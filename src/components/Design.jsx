@@ -184,7 +184,7 @@ const Work = () => {
         className="
           absolute top-0 left-1/2 -translate-x-1/2
           w-[700px] h-[700px]
-          bg-purple-500/10 blur-[120px]
+          blur-[120px]
           rounded-full
           pointer-events-none
         "
