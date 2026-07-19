@@ -4,6 +4,7 @@
  */
 
 import { useRef } from "react";
+import { motion } from "framer-motion";
 import { ButtonPrimary } from "./Button";
 
 /* ── 3D Hover wrapper ───────────────────────────────────────────────── */
@@ -82,6 +83,13 @@ const Hero = () => {
     window.open("/images/CV.pdf", "_blank");
   };
 
+  const springTransition = {
+    type: "spring",
+    stiffness: 250,
+    damping: 70,
+    mass: 1,
+  };
+
   return (
     <section
       id="home"
@@ -90,48 +98,74 @@ const Hero = () => {
       <div className="container items-center lg:grid lg:grid-cols-2 lg:gap-10">
         {/* ── Left ── */}
         <div>
-          <div className="flex items-center gap-3">
+          <motion.div
+            className="flex items-center gap-3"
+            initial={{ y: 60, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={springTransition}
+          >
             <div className="flex items-center gap-1.5 text-zinc-400 text-sm tracking-wide">
               <span className="relative w-2 h-2 rounded-full bg-emerald-400">
                 <span className="absolute inset-0 rounded-full bg-emerald-400 animate-ping" />
               </span>
               Disponible pour un travail
             </div>
-          </div>
+          </motion.div>
 
-          <h2 className="headline-1 max-w-[15ch] sm:max-w-[20ch] lg:max-w-[15ch] mt-5 mb-8 lg:mb-10">
+          <motion.h2
+            className="headline-1 max-w-[15ch] sm:max-w-[20ch] lg:max-w-[15ch] mt-5 mb-8 lg:mb-10"
+            initial={{ y: 60, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ ...springTransition, delay: 0.1 }}
+          >
             RASAMIMANANA Fetra Faneva
-          </h2>
+          </motion.h2>
 
-          <div className="flex items-center gap-3">
+          <motion.div
+            className="flex items-center gap-3"
+            initial={{ y: 60, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ ...springTransition, delay: 0.2 }}
+          >
             <ButtonPrimary
               label="Download CV"
               icon="download"
               onClick={handleDownloadCV}
             />
-          </div>
+          </motion.div>
         </div>
 
         {/* ── Right ── */}
         <div className="hidden lg:flex justify-end">
-          <Card3D>
-            <a
-              href="https://github.com/fetrafaneva"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Voir mon GitHub"
-            >
-              <figure className="w-full bg-gradient-to-t from-sky-400 via-25% via-sky-400/40 to-65% rounded-[60px] overflow-hidden">
-                <img
-                  src="/images/hero-banner.png"
-                  width={656}
-                  height={800}
-                  alt="Fetra Faneva"
-                  className="w-full"
-                />
-              </figure>
-            </a>
-          </Card3D>
+          <motion.div
+            className="w-full max-w-[480px] ml-auto"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ ...springTransition, delay: 0.3 }}
+          >
+            <Card3D>
+              <a
+                href="https://github.com/fetrafaneva"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Voir mon GitHub"
+              >
+                <figure className="w-full bg-gradient-to-t from-sky-400 via-25% via-sky-400/40 to-65% rounded-[60px] overflow-hidden">
+                  <img
+                    src="/images/hero-banner.png"
+                    width={656}
+                    height={800}
+                    alt="Fetra Faneva"
+                    className="w-full"
+                  />
+                </figure>
+              </a>
+            </Card3D>
+          </motion.div>
         </div>
       </div>
     </section>

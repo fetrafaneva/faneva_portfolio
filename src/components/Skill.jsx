@@ -6,6 +6,7 @@
 /**
  * Components
  */
+import { motion } from "framer-motion";
 import SkillCard from "./SkillCard";
 
 const skillItem = [
@@ -52,26 +53,54 @@ const skillItem = [
   },
 ];
 
+const springTransition = {
+  type: "spring",
+  stiffness: 250,
+  damping: 70,
+  mass: 1,
+};
+
 const Skill = () => {
   return (
     <section className="bg-primary section">
       <div className="container">
-        <h2 className="headline-2">Essential Tools I use</h2>
+        <motion.h2
+          className="headline-2"
+          initial={{ y: 60, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={springTransition}
+        >
+          Essential Tools I use
+        </motion.h2>
 
-        <p className="text-zinc-400 mt-3 mb-8 max-w-[50ch]">
+        <motion.p
+          className="text-zinc-400 mt-3 mb-8 max-w-[50ch]"
+          initial={{ y: 60, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ ...springTransition, delay: 0.1 }}
+        >
           Discover the powerful tools and technologies I use to create
           exceptional, high-performing websites & applications.
-        </p>
+        </motion.p>
 
         <div className=" grid gap-3 grid-cols-[repeat(auto-fill,_minmax(250px,_1fr))]">
           {skillItem.map(({ imgSrc, label, desc, level }, key) => (
-            <SkillCard
+            <motion.div
               key={key}
-              imgSrc={imgSrc}
-              label={label}
-              desc={desc}
-              level={level}
-            />
+              initial={{ y: 40, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ ...springTransition, delay: 0.2 + key * 0.08 }}
+            >
+              <SkillCard
+                imgSrc={imgSrc}
+                label={label}
+                desc={desc}
+                level={level}
+              />
+            </motion.div>
           ))}
         </div>
       </div>

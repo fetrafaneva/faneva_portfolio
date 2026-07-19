@@ -6,6 +6,7 @@
 /**
  * Compenents
  */
+import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 
 const works = [
@@ -74,24 +75,46 @@ const works = [
   },
 ];
 
+const springTransition = {
+  type: "spring",
+  stiffness: 250,
+  damping: 70,
+  mass: 1,
+};
+
 const Work = () => {
   return (
     <section id="development" className="bg-primary section">
       <div className="container">
-        <h2 className="headline-2 mb-8">My Development Work</h2>
+        <motion.h2
+          className="headline-2 mb-8"
+          initial={{ y: 60, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={springTransition}
+        >
+          My Development Work
+        </motion.h2>
 
         <div className="grid gap-x-4 gap-y-5 grid-cols-[repeat(auto-fill,_minmax(280px,_1fr))]">
           {works.map(
             ({ imgSrc, title, tags, projectLink, category, isNew }, key) => (
-              <ProjectCard
+              <motion.div
                 key={key}
-                imgSrc={imgSrc}
-                title={title}
-                tags={tags}
-                projectLink={projectLink}
-                category={category}
-                isNew={isNew}
-              />
+                initial={{ y: 40, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ ...springTransition, delay: 0.1 + key * 0.08 }}
+              >
+                <ProjectCard
+                  imgSrc={imgSrc}
+                  title={title}
+                  tags={tags}
+                  projectLink={projectLink}
+                  category={category}
+                  isNew={isNew}
+                />
+              </motion.div>
             )
           )}
         </div>
